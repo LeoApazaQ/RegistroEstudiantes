@@ -4,10 +4,16 @@ namespace App\Http\Controllers;
 
 use App\Models\Estudiante;
 use Illuminate\Http\Request;
-
+use Spatie\Permission\Contracts\Role;
 
 class EstudianteController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('can: Lista estudiantes')->only('index');
+    }
+
     // Mostrar todos los estudiantes
     public function index()
     {
@@ -18,7 +24,7 @@ class EstudianteController extends Controller
     // Mostrar el formulario para crear un nuevo estudiante
     public function create()
     {
-        return view('estudiante.create');
+        return view('estudiante.form');
     }
 
     // Almacenar un nuevo estudiante en la base de datos

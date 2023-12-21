@@ -1,4 +1,4 @@
-@extends('app')
+@extends('layouts.app')
 
 @section('title')
     Registro de estudiantes
@@ -6,7 +6,6 @@
 
 @section('content')
 
-    <body class="bg-light d-flex align-items-center justify-content-center" style="height: 100vh;">
 
         <div class="container m-5 rounded p-4 shadow-sm bg-white">
 
@@ -74,6 +73,5 @@
                 <button type="submit" class="btn btn-primary">Enviar</button>
             </form>
         </div>
-    </body>
 
 @endsection
